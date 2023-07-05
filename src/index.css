@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+    text-decoration: none;
+    @apply text-lightBeige;
+    position: relative;
+}
+  
+a::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    width: 0%;
+    color:black;  
+    height: .3px;
+    @apply bg-lightBlue;
+    transition: width 450ms;
+    transition-timing-function: cubic-bezier(0.645,0.045,0.355,1);
+}
+  
+a:hover::after {
+    width: 100%;
+}
+
+nav {
+    background: rgba(39, 55, 77, 0.87);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+}
+
+.box-shadow {    
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+}
