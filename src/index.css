@@ -20,7 +20,6 @@
 
 .links {
     text-decoration: none;
-    @apply text-lightBeige;
     position: relative;
 }
   
@@ -32,7 +31,7 @@
     width: 0%;
     color:black;  
     height: .3px;
-    @apply bg-lightBlue;
+    @apply bg-lightBeige;
     transition: width 450ms;
     transition-timing-function: cubic-bezier(0.645,0.045,0.355,1);
 }
@@ -65,3 +64,20 @@ nav {
         justify-content: flex-start;
     }
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    background: #27374D;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {    
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #526D82; 
+    border-radius: 10px;
+  }

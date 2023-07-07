@@ -4,7 +4,7 @@ import { works } from "../data/works";
 export const WorkPage = () => {
   return (
     <div id="work" className="content">
-      <h1 className="text-3xl pb-5">02. Some works</h1>
+      <h1 className="text-3xl">02. Some works</h1>
 
       {works.map(({ name, desc, technologies, img, github_url, live_url }) => {
         return (

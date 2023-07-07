@@ -6,7 +6,7 @@ export const Footer = () => {
         Inspired by the portfolio from{" "}
         <a
           href="https://v4.brittanychiang.com/"
-          className="links"
+          className="links text-lightGray"
           target="_blank"
           rel="noreferrer"
         >

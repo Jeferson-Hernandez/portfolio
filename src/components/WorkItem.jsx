@@ -8,7 +8,7 @@ export const WorkItem = ({
   live_url,
 }) => {
   return (
-    <div className="works flex flex-col pb-20 xl:flex-row justify-center  odd:xl:flex-row-reverse">
+    <div className="works flex flex-col pb-20 pt-10 xl:flex-row justify-center  odd:xl:flex-row-reverse">
       <div className="w-full max-w-[43rem] mt-5 mx-auto">
         <img src="./src/assets/works1.PNG" alt="" />
       </div>
@@ -26,12 +26,12 @@ export const WorkItem = ({
             );
           })}
         </ol>
-        <div className="flex flex-row space-x-3 xl:justify-end">
+        <div className="flex flex-row space-x-1 xl:justify-end">
           <a href={github_url} className="text-xs p-1">
-            Github
+            <img src="./src/assets/github-repo.svg" alt="" />
           </a>
           <a href={live_url} className="text-xs p-1">
-            Live
+            <img src="./src/assets/external-link.svg" alt="" />
           </a>
         </div>
       </div>
