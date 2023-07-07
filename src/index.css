@@ -2,13 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+}
+
+@layer utilities {
+    .content {
+        @apply text-lightBeige max-w-6xl mx-5 my-10 py-10 px-5 md:mx-14 md:py-20 md:px-20 xl:mx-auto xl:py-14 xl:px-44 
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.links {
     text-decoration: none;
     @apply text-lightBeige;
     position: relative;
 }
   
-a::after {
+.links::after {
     content: '';
     position: absolute;
     left: 0px;
@@ -21,7 +37,7 @@ a::after {
     transition-timing-function: cubic-bezier(0.645,0.045,0.355,1);
 }
   
-a:hover::after {
+.links:hover::after {
     width: 100%;
 }
 
@@ -33,4 +49,19 @@ nav {
 
 .box-shadow {    
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1280px) {
+    .works:nth-child(odd) > .worksItem {
+        transform: translateX(1.25rem);
+    }
+    .works:nth-child(even) > .worksItem {
+        text-align: right;
+    }
+    .works:nth-child(odd) > .worksItem > ol {
+        justify-content: flex-start;
+    } 
+    .works:nth-child(odd) > .worksItem > div {
+        justify-content: flex-start;
+    }
 }
