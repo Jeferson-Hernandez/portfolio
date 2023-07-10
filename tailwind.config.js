@@ -13,6 +13,10 @@ export default {
         lightBrown: "#6D5D6E",
         lightBeige: "#F4EEE0",
       },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        roboto: ["Roboto Slab", "serif"],
+      },
     },
   },
   plugins: [],

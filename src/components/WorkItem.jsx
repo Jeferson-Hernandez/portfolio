@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { fadeIn } from "../animations/motion";
+
 /* eslint-disable react/prop-types */
 export const WorkItem = ({
   name,
@@ -6,11 +9,22 @@ export const WorkItem = ({
   img,
   github_url,
   live_url,
+  direction,
 }) => {
   return (
-    <div className="works flex flex-col pb-20 pt-10 xl:flex-row justify-center  odd:xl:flex-row-reverse">
-      <div className="w-full max-w-[43rem] mt-5 mx-auto">
-        <img src="./src/assets/works1.PNG" alt="" />
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      variants={fadeIn(direction, 0.8, 0.5)}
+      viewport={{ once: true, amount: 0.5 }}
+      className="works flex flex-col pt-20 pb-10 items-center xl:flex-row justify-center odd:xl:flex-row-reverse"
+    >
+      <div className="w-full mt-5 mx-auto lg:h-[20rem]">
+        <img
+          src="./src/assets/works1.PNG"
+          alt=""
+          className="h-full object-cover"
+        />
       </div>
       <div className="worksItem w-full xl:w-7/12 max-w-xl xl:-translate-x-5">
         <a href="#">{name}</a>
@@ -35,6 +49,6 @@ export const WorkItem = ({
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

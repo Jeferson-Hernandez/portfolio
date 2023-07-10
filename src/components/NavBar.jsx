@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
+import { motion } from "framer-motion";
+import { easeIn } from "../animations/motion";
+import { NavItem } from "./NavItem";
+
 export const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -34,19 +38,24 @@ export const NavBar = () => {
           prevScrollPos === 0 ? "" : "box-shadow"
         } transition-all duration-500 z-30`}
       >
-        <div className="relative ">
-          <div className="cursor pointer text-2xl bg-darkBlue px-2 py-1 hover:-translate-x-1 hover:-translate-y-1 transition-transform duration-500 border border-lightBlue rounded">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={easeIn(0.5, 0.3)}
+          className="relative"
+        >
+          <div className="text-2xl font-roboto font-bold bg-darkBlue px-2 py-1 hover:-translate-x-1 hover:-translate-y-1 transition-transform duration-500 border border-lightBlue rounded">
             Jh
           </div>
           <span className="absolute bg-lightBeige inset-0 -z-10 rounded" />
-        </div>
+        </motion.div>
 
         {isToggle ? (
           <img
             src="./src/assets/close-icon.svg"
             alt="close mobile menu"
             onClick={() => setIsToggle(!isToggle)}
-            className="sm:hidden cursor-pointer z-50"
+            className="sm:hidden cursor-pointer mr-1 z-50"
           />
         ) : (
           <img
@@ -58,38 +67,19 @@ export const NavBar = () => {
         )}
 
         <ul className="hidden sm:flex flex-row space-x-10 text-xs">
-          <li>
-            <a href="#about" className="links">
-              <span>01.</span> About
-            </a>
-          </li>
-          <li>
-            <a href="#work" className="links">
-              <span>02.</span> Work
-            </a>
-          </li>
-          <li>
-            <a href="#skilss" className="links">
-              <span>03.</span> Skills
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:jefry_2558@hotmail.com"
-              className="py-3 px-3 border-2 border-lightBeige rounded-lg hover:bg-lightBeige hover:text-darkBlue transition duration-500"
-            >
-              Contact
-            </a>
-          </li>
+          <NavItem name={"sobre"} index={1} />
+          <NavItem name={"projectos"} index={2} />
+          <NavItem name={"habilidades"} index={3} />
+          <NavItem name={"contacto"} index={4} button={true} />
         </ul>
 
         {isToggle && (
           <nav
-            className={`absolute text-center text-lightBeige left-20 inset-0 z-20`}
+            className={`absolute text-center text-lightBeige left-24 inset-0 z-20`}
           >
             <ul className="flex flex-col h-screen bg-lightBlue items-center justify-center space-y-10 text-base">
               <li>
-                <span className="block">01.</span>
+                <span className="block font-roboto font-bold">01.</span>
                 <a
                   href="#about"
                   onClick={() => setIsToggle(!isToggle)}
@@ -99,7 +89,7 @@ export const NavBar = () => {
                 </a>
               </li>
               <li>
-                <span className="block">02.</span>
+                <span className="block font-roboto font-bold">02.</span>
                 <a
                   href="#work"
                   onClick={() => setIsToggle(!isToggle)}
@@ -109,7 +99,7 @@ export const NavBar = () => {
                 </a>
               </li>
               <li>
-                <span className="block">03.</span>
+                <span className="block font-roboto font-bold">03.</span>
                 <a
                   href="#skills"
                   onClick={() => setIsToggle(!isToggle)}
@@ -121,7 +111,7 @@ export const NavBar = () => {
               <li>
                 <a
                   href="mailto:jefry_2558@hotmail.com"
-                  className="py-3 px-3 border-2 border-lightBeige rounded-lg hover:bg-lightBeige hover:text-darkBlue transition duration-500"
+                  className="py-3 px-3 border-2 font-bold border-lightBeige rounded-lg hover:bg-lightBeige hover:text-darkBlue transition duration-500"
                 >
                   Contact
                 </a>

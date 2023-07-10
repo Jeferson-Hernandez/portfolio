@@ -7,7 +7,7 @@ import { WorkPage } from "./pages/WorkPage";
 
 function App() {
   return (
-    <div className="bg-darkBlue">
+    <div className="bg-darkBlue font-montserrat">
       <NavBar />
       <HomePage />
       <AboutPage />

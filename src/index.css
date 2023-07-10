@@ -10,12 +10,15 @@
 
 @layer utilities {
     .content {
-        @apply text-lightBeige max-w-6xl mx-5 my-10 py-10 px-5 md:mx-14 md:py-20 md:px-20 xl:mx-auto xl:py-14 xl:px-44 
+        @apply text-lightBeige max-w-6xl mx-5 my-10 py-10 px-5 md:mx-14 md:py-20 md:px-20 xl:mx-auto xl:py-24 xl:px-28 
     }
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;    
+}
+*::selection {
+    @apply bg-lightBeige text-lightBlue  
 }
 
 .links {
@@ -69,15 +72,15 @@ nav {
 ::-webkit-scrollbar {
     width: 5px;
     background: #27374D;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {    
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Track */
+::-webkit-scrollbar-track {    
+border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #526D82; 
     border-radius: 10px;
-  }
+}
