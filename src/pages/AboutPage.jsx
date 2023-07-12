@@ -8,16 +8,19 @@ export const AboutPage = () => {
       initial="hidden"
       viewport={{ once: true, amount: 0.7 }}
       id="sobre"
-      className="content flex flex-col items-center space-y-10 xl:justify-between xl:space-y-0 xl:space-x-10 xl:text-left xl:flex-row "
+      className="content flex flex-col items-center space-y-10 xl:justify-between xl:space-y-0 xl:space-x-10 xl:text-left xl:flex-row pb-32"
     >
       <div className="flex flex-col space-y-5 xl:w-8/12">
         <motion.h1
           variants={easeIn(0.7, 0.3)}
-          className="titulo-line text-3xl font-bold font-roboto"
+          className="relative title-line flex items-center whitespace-nowrap"
         >
-          <span className="text-lightGray">01.</span> Sobre mi
+          Sobre mi
         </motion.h1>
-        <motion.p variants={fadeIn("bottom", 0.7, 0.3, 50)}>
+        <motion.p
+          className="font-lora"
+          variants={fadeIn("bottom", 0.7, 0.3, 50)}
+        >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
           distinctio consequuntur sint soluta fugit ullam illum molestiae
           ratione quis neque voluptatem, repudiandae, delectus est porro

@@ -7,14 +7,14 @@ import { WorkPage } from "./pages/WorkPage";
 
 function App() {
   return (
-    <div className="bg-darkBlue font-montserrat">
+    <main className="bg-darkBlue">
       <NavBar />
       <HomePage />
       <AboutPage />
       <WorkPage />
       <SkillPage />
       <Footer />
-    </div>
+    </main>
   );
 }
 

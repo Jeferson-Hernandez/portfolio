@@ -9,41 +9,46 @@ export const HomePage = () => {
       initial="hidden"
       viewport={{ once: true, amount: 0.5 }}
       id="home"
-      className="content flex flex-col items-center space-y-20  xl:justify-between xl:space-y-0 xl:space-x-10 xl:text-left xl:flex-row "
+      className="content min-h-screen h-screen flex items-center xl:text-left"
     >
       <motion.div
         variants={fadeIn("bottom", 1, 1.3, 50)}
-        className="flex flex-col space-y-5 "
+        className="flex flex-col space-y-9 pb-28"
       >
-        <div className="text-2xl font-roboto">
+        <div className="md:text-4xl lg:text-5xl font-lora">
           <Typewriter
             options={{ autoStart: true }}
             onInit={(typewriter) => {
               typewriter
                 .pauseFor(2000)
-                .typeString("Hola, mi nombre es Jeferson")
                 .typeString(
-                  '<br/><span style="color: #526D82; font-weight: bold">Desarrollador Web</span>'
+                  '<span class="heading1" >Hola, mi nombre es</span><br/><br/>'
+                )
+                .typeString(
+                  '<span class="heading2" >Jeferson Hernandez.</span><br/>'
+                )
+                .typeString(
+                  '<span class="heading2" style="color: #526D82; font-weight: bold">Desarrollador Web</span>'
                 )
                 .pauseFor(2000)
                 .deleteChars(17)
                 .typeString(
-                  '<span style="color: #526D82; font-weight: bold">Front-end Developer.</span>'
+                  '<span class="heading2" style="color: #526D82; font-weight: bold">Front-end Developer.</span>'
                 )
                 .start();
             }}
           />
         </div>
-        <p>
+        <p className="font-lora">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
           distinctio consequuntur sint soluta fugit ullam illum molestiae
           ratione quis neque voluptatem, repudiandae, delectus est porro
           laudantium iste voluptate atque modi.
         </p>
       </motion.div>
-      <motion.div variants={easeIn(1.2, 1.5)} className="max-w-[30rem] mx-auto">
+      {/* <motion.div variants={easeIn(1.2, 1.5)} className="max-w-[30rem] mx-auto">
         <img src="./src/assets/coding2.svg" alt="" />
-      </motion.div>
+      </motion.div> */}
     </motion.section>
   );
 };

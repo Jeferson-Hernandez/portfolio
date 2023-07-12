@@ -16,6 +16,11 @@ export default {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         roboto: ["Roboto Slab", "serif"],
+        lora: ["Lora", "serif"],
+      },
+      screens: {
+        md: "600px",
+        lg: "1000px",
       },
     },
   },

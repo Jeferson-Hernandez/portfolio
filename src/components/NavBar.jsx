@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 import { motion } from "framer-motion";
-import { easeIn } from "../animations/motion";
+import { easeIn, fadeIn } from "../animations/motion";
 import { NavItem } from "./NavItem";
 
 export const NavBar = () => {
@@ -50,21 +50,20 @@ export const NavBar = () => {
           <span className="absolute bg-lightBeige inset-0 -z-10 rounded" />
         </motion.div>
 
-        {isToggle ? (
-          <img
-            src="./src/assets/close-icon.svg"
-            alt="close mobile menu"
-            onClick={() => setIsToggle(!isToggle)}
-            className="sm:hidden cursor-pointer mr-1 z-50"
-          />
-        ) : (
-          <img
-            src="./src/assets/hamburger-icon.svg"
-            alt="open mobile menu"
-            onClick={() => setIsToggle(!isToggle)}
-            className="sm:hidden cursor-pointer"
-          />
-        )}
+        <img
+          src={
+            isToggle
+              ? "./src/assets/close-icon.svg"
+              : "./src/assets/hamburger-icon.svg"
+          }
+          alt="close mobile menu"
+          onClick={() => setIsToggle(!isToggle)}
+          className={
+            isToggle
+              ? "sm:hidden cursor-pointer mr-1 z-50"
+              : "sm:hidden cursor-pointer "
+          }
+        />
 
         <ul className="hidden sm:flex flex-row space-x-10 text-xs">
           <NavItem name={"sobre"} index={1} />
@@ -74,50 +73,19 @@ export const NavBar = () => {
         </ul>
 
         {isToggle && (
-          <nav
-            className={`absolute text-center text-lightBeige left-24 inset-0 z-20`}
+          <motion.aside
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn("right", 0.3, 0.2)}
+            className="absolute text-center text-lightBeige left-24 inset-0 z-20"
           >
             <ul className="flex flex-col h-screen bg-lightBlue items-center justify-center space-y-10 text-base">
-              <li>
-                <span className="block font-roboto font-bold">01.</span>
-                <a
-                  href="#about"
-                  onClick={() => setIsToggle(!isToggle)}
-                  className="links tracking-widest"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <span className="block font-roboto font-bold">02.</span>
-                <a
-                  href="#work"
-                  onClick={() => setIsToggle(!isToggle)}
-                  className="links tracking-widest"
-                >
-                  Work
-                </a>
-              </li>
-              <li>
-                <span className="block font-roboto font-bold">03.</span>
-                <a
-                  href="#skills"
-                  onClick={() => setIsToggle(!isToggle)}
-                  className="links tracking-widest"
-                >
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:jefry_2558@hotmail.com"
-                  className="py-3 px-3 border-2 font-bold border-lightBeige rounded-lg hover:bg-lightBeige hover:text-darkBlue transition duration-500"
-                >
-                  Contact
-                </a>
-              </li>
+              <NavItem name={"sobre"} index={1} aside />
+              <NavItem name={"projectos"} index={2} aside />
+              <NavItem name={"habilidades"} index={3} aside />
+              <NavItem name={"contacto"} index={4} aside button={true} />
             </ul>
-          </nav>
+          </motion.aside>
         )}
       </nav>
     </>

@@ -6,15 +6,15 @@ import { easeIn } from "../animations/motion";
 
 export const WorkPage = () => {
   return (
-    <div id="projectos" className="content overflow-x-hidden">
+    <div id="projectos" className="content pb-32 overflow-x-hidden">
       <motion.h1
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={easeIn(0.7, 0.3)}
-        className="titulo-line text-3xl font-bold font-roboto"
+        variants={easeIn(0.5, 0.1)}
+        className="relative title-line flex items-center whitespace-nowrap"
       >
-        <span className="text-lightGray">02.</span> Projectos
+        Projectos
       </motion.h1>
 
       {works.map(

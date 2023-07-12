@@ -2,27 +2,40 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../animations/motion";
 
-export const NavItem = ({ name, index, button }) => {
+export const NavItem = ({ name, index, button = false, aside = false }) => {
   return (
     <motion.li
       initial="hidden"
       animate="visible"
-      variants={fadeIn("top", index / 5, 0.6, 30)}
+      variants={
+        aside
+          ? fadeIn("bottom", index / 5, 0.4, 30)
+          : fadeIn("top", index / 5, 0.9, 30)
+      }
     >
       {button ? (
         <a
           href="mailto:jefry_2558@hotmail.com"
-          className="py-3 px-3 border-2 font-bold border-lightBeige rounded-lg hover:bg-lightBeige hover:text-darkBlue  transition duration-500"
+          className={aside ? "btn-aside" : "btn-nav"}
         >
           {name}
         </a>
       ) : (
-        <a href={`#${name}`} className="links capitalize">
-          <span className="font-roboto font-bold text-lightGray ">
-            {index}.
-          </span>{" "}
-          {name}
-        </a>
+        <>
+          <span className={aside ? "index-aside block" : "index-nav"}>
+            0{index}.
+          </span>
+          <a
+            href={`#${name}`}
+            className={
+              aside
+                ? "links capitalize text-lg"
+                : "links capitalize pl-1 text-sm lg:text-base"
+            }
+          >
+            {name}
+          </a>
+        </>
       )}
     </motion.li>
   );

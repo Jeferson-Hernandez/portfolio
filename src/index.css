@@ -4,15 +4,38 @@
 
 @layer base {
     html {
-        @apply scroll-smooth;
+        @apply scroll-smooth;        
+    }
+    p {
+        @apply text-base md:text-lg lg:text-xl
+    }
+    h1 {
+        @apply text-2xl md:text-3xl font-lora
     }
 }
 
 @layer utilities {
     .content {
-        @apply text-lightBeige max-w-6xl mx-5 my-10 py-10 px-5 md:mx-14 md:py-20 md:px-20 xl:mx-auto xl:py-24 xl:px-28 
+        @apply text-lightBeige max-w-6xl px-5 md:px-20 xl:mx-auto xl:px-24 justify-center
+        /* @apply text-lightBeige max-w-6xl mx-5 my-10 py-10 px-5 md:mx-14 md:py-20 md:px-20 xl:mx-auto xl:py-24 xl:px-28*/
+    }
+
+    .index-nav {
+        @apply font-roboto font-bold text-sm lg:text-base text-lightGray
+    }
+    .index-aside {
+        @apply font-roboto font-bold text-lg text-lightWhite
+    }
+
+    .btn-nav {
+        @apply capitalize font-montserrat text-sm lg:text-base py-3 px-3 border-2 font-bold border-lightBeige rounded-lg hover:bg-lightBeige hover:text-darkBlue transition duration-500
+    }
+    .btn-aside {
+        @apply capitalize font-montserrat text-lg py-4 px-3 border-2 font-bold border-lightBeige rounded-lg hover:bg-lightBeige hover:text-darkBlue transition duration-500
     }
 }
+
+/* Reset */
 
 * {
     box-sizing: border-box;    
@@ -21,8 +44,45 @@
     @apply bg-lightBeige text-lightBlue  
 }
 
+/* Headings fonts size */
+
+.heading1 {
+    font-size: 19px;
+}
+.heading2 {
+    font-size: clamp(30px, 7vw, 60px);
+    font-weight: bold;
+}
+
+
+/* Break-Points */
+
+@media (min-width: 768px) {
+    .heading1 {
+        font-size: 25px;  
+    }
+    .heading2 {
+        font-size: clamp(20px, 7vw, 120px);
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 1280px) {
+    .heading1 {
+        font-size: 30px;
+    }
+    .heading2 {
+        font-size: clamp(20px, 5vw, 90px);
+        font-weight: bold;
+    }
+    
+    
+}
+
+/* Links hover animation */
+
 .links {
-    text-decoration: none;
+    text-decoration: none;    
     position: relative;
 }
   
@@ -35,13 +95,51 @@
     color:black;  
     height: .3px;
     @apply bg-lightBeige;
-    transition: width 450ms;
+    transition: width 250ms;
     transition-timing-function: cubic-bezier(0.645,0.045,0.355,1);
 }
   
 .links:hover::after {
     width: 100%;
 }
+
+/* index and line for every section title */
+
+main {
+    counter-increment: section-title 0;
+}
+
+@media (max-width: 1279px) {
+    .title-line::after {
+        content: "";
+        display: block;
+        margin-left: 5px;
+        width: 100%;
+        height: 1px;
+        background-color: #526D82;
+    }
+}
+
+@media (min-width: 1280px) {
+    .title-line::after {
+        content: "";
+        display: block;
+        margin-left: 5px;
+        width: 40%;
+        height: 1px;
+        background-color: #526D82;
+    }
+}
+
+.title-line::before {
+    content: "0"counter(section-title)".";
+    counter-increment: section-title 1;
+    display: block;
+    padding-right: 5px;
+    @apply font-roboto text-lightGray
+}
+
+/* Navbar opacity */
 
 nav {
     background: rgba(39, 55, 77, 0.87);
@@ -52,6 +150,8 @@ nav {
 .box-shadow {    
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Works order */
 
 @media (min-width: 1280px) {
     .works:nth-child(odd) > .worksItem {
@@ -67,6 +167,9 @@ nav {
         justify-content: flex-start;
     }
 }
+
+
+/* ScrollBar */
 
 /* width */
 ::-webkit-scrollbar {
