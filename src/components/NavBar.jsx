@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
-import { motion } from "framer-motion";
-import { easeIn, fadeIn } from "../animations/motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { easeIn, navFadeIn } from "../animations/motion";
 import { NavItem } from "./NavItem";
 
 export const NavBar = () => {
@@ -31,23 +31,20 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav
-        className={`sticky w-full flex flex-row justify-between items-center px-7 sm:px-16 py-3 text-lightBeige  ${
-          visible ? "top-0" : "-top-20"
+      <motion.nav
+        initial="hidden"
+        animate="visible"
+        className={`fixed w-full flex flex-row justify-between items-center px-7 py-4 md:py-6 sm:px-16  text-darkWhite  ${
+          visible ? "top-0" : "-top-24"
         } ${
           prevScrollPos === 0 ? "" : "box-shadow"
         } transition-all duration-500 z-30`}
       >
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={easeIn(0.5, 0.3)}
-          className="relative"
-        >
-          <div className="text-2xl font-roboto font-bold bg-darkBlue px-2 py-1 hover:-translate-x-1 hover:-translate-y-1 transition-transform duration-500 border border-lightBlue rounded">
+        <motion.div variants={easeIn(0.5, 0.3)} className="relative">
+          <div className="text-2xl font-roboto font-bold bg-veryDarkBlue px-3 py-2 hover:-translate-x-1 hover:-translate-y-1 transition-transform duration-500 border border-brightBlue rounded">
             Jh
           </div>
-          <span className="absolute bg-lightBeige inset-0 -z-10 rounded" />
+          <span className="absolute bg-lightWhite inset-0 -z-10 rounded" />
         </motion.div>
 
         <img
@@ -56,7 +53,7 @@ export const NavBar = () => {
               ? "./src/assets/close-icon.svg"
               : "./src/assets/hamburger-icon.svg"
           }
-          alt="close mobile menu"
+          alt="close menu icon"
           onClick={() => setIsToggle(!isToggle)}
           className={
             isToggle
@@ -72,22 +69,25 @@ export const NavBar = () => {
           <NavItem name={"contacto"} index={4} button={true} />
         </ul>
 
-        {isToggle && (
-          <motion.aside
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn("right", 0.3, 0.2)}
-            className="absolute text-center text-lightBeige left-24 inset-0 z-20"
-          >
-            <ul className="flex flex-col h-screen bg-lightBlue items-center justify-center space-y-10 text-base">
-              <NavItem name={"sobre"} index={1} aside />
-              <NavItem name={"projectos"} index={2} aside />
-              <NavItem name={"habilidades"} index={3} aside />
-              <NavItem name={"contacto"} index={4} aside button={true} />
-            </ul>
-          </motion.aside>
-        )}
-      </nav>
+        <AnimatePresence>
+          {isToggle && (
+            <motion.aside
+              initial={"hidden"}
+              animate={isToggle ? "visible" : "hidden"}
+              variants={navFadeIn("right", 0.2)}
+              exit={"hidden"}
+              className="absolute text-center h-screen text-darkWhite left-[25%] inset-0  z-20"
+            >
+              <ul className="flex flex-col h-full bg-darkBlue items-center justify-center space-y-10 text-base">
+                <NavItem name={"sobre"} index={1} aside />
+                <NavItem name={"projectos"} index={2} aside />
+                <NavItem name={"habilidades"} index={3} aside />
+                <NavItem name={"contacto"} index={4} aside button={true} />
+              </ul>
+            </motion.aside>
+          )}
+        </AnimatePresence>
+      </motion.nav>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
-import { easeIn, fadeIn } from "../animations/motion";
+import { fadeIn } from "../animations/motion";
 
 export const HomePage = () => {
   return (
@@ -13,27 +13,27 @@ export const HomePage = () => {
     >
       <motion.div
         variants={fadeIn("bottom", 1, 1.3, 50)}
-        className="flex flex-col space-y-9 pb-28"
+        className="flex flex-col space-y-9 pb-16"
       >
         <div className="md:text-4xl lg:text-5xl font-lora">
           <Typewriter
-            options={{ autoStart: true }}
+            options={{ autoStart: true, cursor: "" }}
             onInit={(typewriter) => {
               typewriter
                 .pauseFor(2000)
                 .typeString(
-                  '<span class="heading1" >Hola, mi nombre es</span><br/><br/>'
+                  '<span class="heading1" style="color: #EAEAEA" >Hola, mi nombre es</span>'
                 )
                 .typeString(
-                  '<span class="heading2" >Jeferson Hernandez.</span><br/>'
+                  '<span class="heading2" >Jeferson Hernandez.</span>'
                 )
                 .typeString(
-                  '<span class="heading2" style="color: #526D82; font-weight: bold">Desarrollador Web</span>'
+                  '<span class="heading2" style="color: #3a506b; font-weight: bold">Desarrollador Web</span>'
                 )
                 .pauseFor(2000)
                 .deleteChars(17)
                 .typeString(
-                  '<span class="heading2" style="color: #526D82; font-weight: bold">Front-end Developer.</span>'
+                  '<span class="heading2" style="color: #3a506b; font-weight: bold">Front-end Developer.</span>'
                 )
                 .start();
             }}
@@ -46,9 +46,6 @@ export const HomePage = () => {
           laudantium iste voluptate atque modi.
         </p>
       </motion.div>
-      {/* <motion.div variants={easeIn(1.2, 1.5)} className="max-w-[30rem] mx-auto">
-        <img src="./src/assets/coding2.svg" alt="" />
-      </motion.div> */}
     </motion.section>
   );
 };

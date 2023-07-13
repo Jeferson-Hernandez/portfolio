@@ -1,12 +1,14 @@
 export const Footer = () => {
   return (
-    <div className="pt-5 pb-2 bg-darkBlue text-center">
-      <p className="text-xs text-lightBeige">Creado por Jeferson Hernandez</p>
-      <p className="text-xs text-lightBeige">
+    <div className="pt-5 pb-2 bg-veryDarkBlue text-center">
+      <p className="text-xs md:text-sm text-lightWhite">
+        Creado por Jeferson Hernandez
+      </p>
+      <p className="text-xs md:text-sm text-lightWhite">
         Portafolio inspirado por{" "}
         <a
           href="https://v4.brittanychiang.com/"
-          className="links text-lightGray"
+          className="links text-brightBlue"
           target="_blank"
           rel="noreferrer"
         >

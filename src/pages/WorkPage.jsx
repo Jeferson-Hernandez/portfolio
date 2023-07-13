@@ -12,7 +12,7 @@ export const WorkPage = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={easeIn(0.5, 0.1)}
-        className="relative title-line flex items-center whitespace-nowrap"
+        className="relative title-line  flex items-center whitespace-nowrap"
       >
         Projectos
       </motion.h1>

@@ -15,8 +15,8 @@ export const WorkItem = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      variants={fadeIn(direction, 0.8, 0.5)}
-      viewport={{ once: true, amount: 0.5 }}
+      variants={fadeIn(direction, 0.8, 0.2)}
+      viewport={{ once: true, amount: 0.3 }}
       className="works flex flex-col pt-20 pb-16 space-y-8 items-center xl:space-y-0 xl:flex-row justify-center odd:xl:flex-row-reverse"
     >
       <div className="w-full mt-5 mx-auto lg:h-[20rem] max-w-2xl">
@@ -27,10 +27,13 @@ export const WorkItem = ({
         />
       </div>
       <div className="worksItem w-full max-w-xl xl:w-7/12 xl:-translate-x-5">
-        <a href="#" className="links text-lg md:text-xl lg:text-2xl">
+        <a
+          href="#"
+          className="links text-lightWhite text-lg md:text-xl lg:text-2xl"
+        >
           {name}
         </a>
-        <div className="bg-lightBlue rounded-sm py-3 px-2 mt-4 xl:w-96">
+        <div className="bg-lightBlue2 rounded-sm py-3 px-2 mt-4 xl:w-96">
           <p className="text-sm py-3 px-5 md:text-base ">{desc}</p>
         </div>
         <ol className="flex flex-row space-x-3 xl:justify-end">
