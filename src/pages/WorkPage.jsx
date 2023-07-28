@@ -6,7 +6,7 @@ import { easeIn } from "../animations/motion";
 
 export const WorkPage = () => {
   return (
-    <div id="projectos" className="content pb-32 overflow-x-hidden">
+    <div id="projectos" className="pb-32 overflow-x-hidden">
       <motion.h1
         initial="hidden"
         whileInView="visible"

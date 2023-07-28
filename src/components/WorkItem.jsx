@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../animations/motion";
+import parse from "html-react-parser";
+
+import { githubRepo, externalLink } from "../assets";
 
 /* eslint-disable react/prop-types */
 export const WorkItem = ({
@@ -26,15 +29,12 @@ export const WorkItem = ({
           className="h-full object-cover mx-auto rounded"
         />
       </div>
-      <div className="worksItem w-full max-w-xl xl:w-7/12 xl:-translate-x-5">
-        <a
-          href="#"
-          className="links text-lightWhite text-lg md:text-xl lg:text-2xl"
-        >
+      <div className="worksItem w-full max-w-xl xl:w-7/12">
+        <span className="text-lightWhite text-lg md:text-xl lg:text-2xl">
           {name}
-        </a>
-        <div className="bg-lightBlue2 rounded-sm py-3 px-2 mt-4 xl:w-96">
-          <p className="text-sm py-3 px-5 md:text-base ">{desc}</p>
+        </span>
+        <div className="bg-lightBlue2 rounded-sm py-3 px-2 mt-4 xl:w-[27rem]">
+          <p className="text-sm py-3 px-5 md:text-base">{parse(desc)}</p>
         </div>
         <ol className="flex flex-row space-x-3 xl:justify-end">
           {technologies.map((name) => {
@@ -46,16 +46,26 @@ export const WorkItem = ({
           })}
         </ol>
         <div className="flex flex-row space-x-1 xl:justify-end">
-          <a href={github_url} className="p-1">
+          <a
+            href={github_url}
+            className="p-1"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img
-              src="./src/assets/github-repo.svg"
+              src={githubRepo}
               alt="github_logo"
               className="md:w-[23px] md:h-[23px]"
             />
           </a>
-          <a href={live_url} className="p-1">
+          <a
+            href={live_url}
+            className="p-1"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img
-              src="./src/assets/external-link.svg"
+              src={externalLink}
               alt="external-link_logo"
               className="md:w-[23px] md:h-[23px]"
             />

@@ -9,42 +9,49 @@ export const HomePage = () => {
       initial="hidden"
       viewport={{ once: true, amount: 0.5 }}
       id="home"
-      className="content min-h-screen h-screen flex items-center xl:text-left"
+      className="min-h-screen h-screen flex items-center xl:text-left"
     >
       <motion.div
-        variants={fadeIn("bottom", 1, 1.3, 50)}
-        className="flex flex-col space-y-9 pb-16"
+        variants={fadeIn("bottom", 0.7, 1.3, 20)}
+        className="flex flex-col font-roboto space-y-3 md:space-y-4 pb-16"
       >
-        <div className="md:text-4xl lg:text-5xl font-lora">
-          <Typewriter
-            options={{ autoStart: true, cursor: "" }}
-            onInit={(typewriter) => {
-              typewriter
-                .pauseFor(2000)
-                .typeString(
-                  '<span class="heading1" style="color: #EAEAEA" >Hola, mi nombre es</span>'
-                )
-                .typeString(
-                  '<span class="heading2" >Jeferson Hernandez.</span>'
-                )
-                .typeString(
-                  '<span class="heading2" style="color: #3a506b; font-weight: bold">Desarrollador Web</span>'
-                )
-                .pauseFor(2000)
-                .deleteChars(17)
-                .typeString(
-                  '<span class="heading2" style="color: #3a506b; font-weight: bold">Front-end Developer.</span>'
-                )
-                .start();
-            }}
-          />
-        </div>
-        <p className="font-lora">
+        <motion.h2
+          variants={fadeIn("bottom", 0.7, 1.7, 20)}
+          className="text-lg md:text-2xl ml-1 lg:mb-5"
+        >
+          Hola, mi nombre es
+        </motion.h2>
+        <motion.p
+          variants={fadeIn("bottom", 0.7, 1.9, 20)}
+          className="text-dynamic"
+        >
+          Jeferson Hernandez.
+        </motion.p>
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .pauseFor(2800)
+              .typeString("Desarrollador Web")
+              .pauseFor(1500)
+              .deleteChars(17)
+              .typeString("Front-end Developer.")
+              .start();
+          }}
+          options={{
+            autoStart: true,
+            deleteSpeed: 120,
+            cursor: "_",
+          }}
+        />
+        <motion.p
+          variants={fadeIn("bottom", 0.7, 2.1, 20)}
+          className="font-lora"
+        >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
           distinctio consequuntur sint soluta fugit ullam illum molestiae
           ratione quis neque voluptatem, repudiandae, delectus est porro
           laudantium iste voluptate atque modi.
-        </p>
+        </motion.p>
       </motion.div>
     </motion.section>
   );

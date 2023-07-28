@@ -1,34 +1,50 @@
+import {
+  logoCss,
+  logoGit,
+  logoHtml,
+  logoJavaScript,
+  logoMySql,
+  logoReact,
+  logoTailwind,
+  logoSass,
+  logoTypescript,
+} from "../assets/skills";
+
 export const skills = [
   {
     name: "html",
-    url: "./src/assets/skills/logo-html.svg",
+    url: logoHtml,
   },
   {
     name: "css",
-    url: "./src/assets/skills/logo-css.svg",
+    url: logoCss,
   },
   {
     name: "javascript",
-    url: "./src/assets/skills/logo-javascript.svg",
+    url: logoJavaScript,
   },
   {
     name: "react",
-    url: "./src/assets/skills/logo-react.svg",
+    url: logoReact,
+  },
+  {
+    name: "typescript",
+    url: logoTypescript,
   },
   {
     name: "tailwind",
-    url: "./src/assets/skills/logo-tailwindcss.svg",
+    url: logoTailwind,
   },
   {
     name: "sass",
-    url: "./src/assets/skills/logo-sass.svg",
+    url: logoSass,
   },
   {
     name: "git",
-    url: "./src/assets/skills/logo-git.svg",
+    url: logoGit,
   },
   {
     name: "mysql",
-    url: "./src/assets/skills/logo-mysql.svg",
+    url: logoMySql,
   },
 ];

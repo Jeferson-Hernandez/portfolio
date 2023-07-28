@@ -10,7 +10,7 @@ export const SkillPage = () => {
       whileInView="visible"
       viewport={{ once: true }}
       id="habilidades"
-      className="content pb-32 space-y-20 xl:text-left xl:flex-row "
+      className="pb-32 space-y-20 xl:text-left xl:flex-row "
     >
       <motion.h1
         variants={easeIn(0.7, 0.3)}
@@ -18,7 +18,7 @@ export const SkillPage = () => {
       >
         Habilidades
       </motion.h1>
-      <div className="">
+      <div>
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mx-auto">
           {skills.map((skill, index) => (
             <motion.img

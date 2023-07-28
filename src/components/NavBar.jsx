@@ -4,6 +4,7 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { AnimatePresence, motion } from "framer-motion";
 import { easeIn, navFadeIn } from "../animations/motion";
 import { NavItem } from "./NavItem";
+import { closeIcon, hamburgerIcon } from "../assets";
 
 export const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -34,7 +35,7 @@ export const NavBar = () => {
       <motion.nav
         initial="hidden"
         animate="visible"
-        className={`fixed w-full flex flex-row justify-between items-center px-7 py-4 md:py-6 sm:px-16  text-darkWhite  ${
+        className={`fixed left-0 right-0 flex flex-row justify-between items-center px-7 py-4 md:py-6 sm:px-16  text-darkWhite  ${
           visible ? "top-0" : "-top-24"
         } ${
           prevScrollPos === 0 ? "" : "box-shadow"
@@ -48,11 +49,7 @@ export const NavBar = () => {
         </motion.div>
 
         <img
-          src={
-            isToggle
-              ? "./src/assets/close-icon.svg"
-              : "./src/assets/hamburger-icon.svg"
-          }
+          src={isToggle ? closeIcon : hamburgerIcon}
           alt="close menu icon"
           onClick={() => setIsToggle(!isToggle)}
           className={
@@ -66,7 +63,7 @@ export const NavBar = () => {
           <NavItem name={"sobre"} index={1} />
           <NavItem name={"projectos"} index={2} />
           <NavItem name={"habilidades"} index={3} />
-          <NavItem name={"contacto"} index={4} button={true} />
+          <NavItem name={"Resume"} index={4} button={true} />
         </ul>
 
         <AnimatePresence>
@@ -82,7 +79,7 @@ export const NavBar = () => {
                 <NavItem name={"sobre"} index={1} aside />
                 <NavItem name={"projectos"} index={2} aside />
                 <NavItem name={"habilidades"} index={3} aside />
-                <NavItem name={"contacto"} index={4} aside button={true} />
+                <NavItem name={"Resume"} index={4} aside button={true} />
               </ul>
             </motion.aside>
           )}

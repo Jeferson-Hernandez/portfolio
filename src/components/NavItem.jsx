@@ -14,15 +14,12 @@ export const NavItem = ({ name, index, button = false, aside = false }) => {
       }
     >
       {button ? (
-        <a
-          href="mailto:jefry_2558@hotmail.com"
-          className={aside ? "btn-aside" : "btn-nav"}
-        >
+        <a href="#" className={aside ? "btn-aside" : "btn-nav"}>
           {name}
         </a>
       ) : (
         <>
-          <span className={aside ? "index-aside block" : "index-nav"}>
+          <span className={aside ? "index-aside block" : "index-nav mr-1"}>
             0{index}.
           </span>
           <a
@@ -30,7 +27,7 @@ export const NavItem = ({ name, index, button = false, aside = false }) => {
             className={
               aside
                 ? "links capitalize text-lg"
-                : "links capitalize pl-1 text-sm lg:text-base"
+                : "links capitalize text-sm lg:text-base"
             }
           >
             {name}
