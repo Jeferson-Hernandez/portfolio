@@ -24,11 +24,12 @@ export const ContactPage = () => {
           Ponte en contacto conmigo
         </h1>
         <p className="text-center max-w-3xl">
-          Ahora mismo estoy en la busqueda de mi primer trabajo como
-          desarrollador, con muchas expectativas y ganas de mejorar cada vez mas
+          Ahora mismo estoy en la búsqueda de mi primer trabajo como
+          desarrollador, con muchas expectativas y ganas de mejorar cada vez
+          más.
         </p>
         <a href="mailto:jefry_2558@hotmail.com" className="btn-nav">
-          contacta me
+          Contáctame
         </a>
       </motion.div>
     </motion.section>

@@ -48,7 +48,7 @@ export const WorkItem = ({
         <div className="flex flex-row space-x-1 xl:justify-end">
           <a
             href={github_url}
-            className="p-1"
+            className="p-1 hover:-translate-y-1  transition-transform duration-200"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -60,7 +60,7 @@ export const WorkItem = ({
           </a>
           <a
             href={live_url}
-            className="p-1"
+            className="p-1 hover:-translate-y-1  transition-transform duration-200"
             target="_blank"
             rel="noreferrer noopener"
           >

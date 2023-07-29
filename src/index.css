@@ -28,10 +28,10 @@
   }
 
   .btn-nav {
-    @apply capitalize font-montserrat text-sm lg:text-base py-3 px-3 border-2 font-bold border-brightBlue rounded-lg hover:bg-brightBlue hover:text-lightWhite transition duration-500;
+    @apply font-montserrat text-sm lg:text-base py-3 px-3 border-2 font-bold border-brightBlue rounded-lg hover:bg-brightBlue hover:text-lightWhite transition duration-500;
   }
   .btn-aside {
-    @apply capitalize font-montserrat text-lg py-4 px-3 border-2 font-bold border-brightBlue rounded-lg hover:bg-brightBlue hover:text-lightWhite transition duration-500;
+    @apply font-montserrat text-lg py-4 px-3 border-2 font-bold border-brightBlue rounded-lg hover:bg-brightBlue hover:text-lightWhite transition duration-500;
   }
 }
 

@@ -23,7 +23,7 @@ export default {
         lora: ["Lora", "serif"],
       },
       screens: {
-        md: "640px",
+        md: "670px",
         lg: "1000px",
       },
     },

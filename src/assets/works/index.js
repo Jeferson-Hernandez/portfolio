@@ -1,5 +1,5 @@
-import hoobankImg from "./hoobank-img.png";
-import spaceTourismImg from "./space-tourism-img.png";
-import sunnysideImg from "./sunnyside-img.png";
+import hoobankImg from "./hoobank-img.jpg";
+import spaceTourismImg from "./space-tourism-img.jpg";
+import sunnysideImg from "./sunnyside-img.jpg";
 
 export { hoobankImg, spaceTourismImg, sunnysideImg };

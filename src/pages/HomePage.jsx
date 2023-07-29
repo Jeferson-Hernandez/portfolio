@@ -45,12 +45,14 @@ export const HomePage = () => {
         />
         <motion.p
           variants={fadeIn("bottom", 0.7, 2.1, 20)}
-          className="font-lora"
+          className="font-lora max-w-4xl"
         >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
-          distinctio consequuntur sint soluta fugit ullam illum molestiae
-          ratione quis neque voluptatem, repudiandae, delectus est porro
-          laudantium iste voluptate atque modi.
+          Soy un desarrollador enfocado actualmente en el entorno de{" "}
+          <span className="text-lightWhite">JavaScript,</span> específicamente
+          en <span className="text-lightWhite">React,</span> con muchas
+          expectativas de seguir explorando este lenguaje.
+          <br /> Dispuesto a aprender nuevas herramientas, con muchas ganas de
+          seguir aprendiendo y mejorar.
         </motion.p>
       </motion.div>
     </motion.section>
