@@ -61,7 +61,7 @@ export const NavBar = () => {
 
         <ul className="hidden md:flex flex-row space-x-10 text-xs">
           <NavItem name={"sobre"} index={1} />
-          <NavItem name={"projectos"} index={2} />
+          <NavItem name={"proyectos"} index={2} />
           <NavItem name={"habilidades"} index={3} />
           <NavItem name={"Hoja de vida"} index={4} button={true} />
         </ul>
@@ -77,7 +77,7 @@ export const NavBar = () => {
             >
               <ul className="flex flex-col h-full bg-darkBlue items-center justify-center space-y-10 text-base">
                 <NavItem name={"sobre"} index={1} aside />
-                <NavItem name={"projectos"} index={2} aside />
+                <NavItem name={"proyectos"} index={2} aside />
                 <NavItem name={"habilidades"} index={3} aside />
                 <NavItem name={"Hoja de vida"} index={4} aside button={true} />
               </ul>
