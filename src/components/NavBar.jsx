@@ -11,23 +11,26 @@ export const NavBar = () => {
   const [visible, setVisible] = useState(true);
   const [isToggle, setIsToggle] = useState(false);
 
-  const handleScroll = () => {
-    const currentScrollPos = window.scrollY;
-    // console.log(currentScrollPos);
-    if (currentScrollPos > prevScrollPos) {
-      setVisible(false);
-    } else {
-      setVisible(true);
-    }
-
-    setPrevScrollPos(currentScrollPos);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+    //Scroll to toggle de navbar
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
 
+      if (currentScrollPos > prevScrollPos) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isToggle, prevScrollPos]);
+
+  //Disable scrollY if aside is toggle
   isToggle ? disableBodyScroll(document) : enableBodyScroll(document);
 
   return (
@@ -47,7 +50,6 @@ export const NavBar = () => {
           </div>
           <span className="absolute bg-lightWhite inset-0 -z-10 rounded" />
         </motion.div>
-
         <img
           src={isToggle ? closeIcon : hamburgerIcon}
           alt="close menu icon"
@@ -76,10 +78,31 @@ export const NavBar = () => {
               className="absolute text-center h-screen text-darkWhite left-[25%] inset-0  z-20"
             >
               <ul className="flex flex-col h-full bg-darkBlue items-center justify-center space-y-10 text-base">
-                <NavItem name={"sobre"} index={1} aside />
-                <NavItem name={"proyectos"} index={2} aside />
-                <NavItem name={"habilidades"} index={3} aside />
-                <NavItem name={"Hoja de vida"} index={4} aside button={true} />
+                <NavItem
+                  name={"sobre"}
+                  index={1}
+                  aside
+                  toggleAside={setIsToggle}
+                />
+                <NavItem
+                  name={"proyectos"}
+                  index={2}
+                  aside
+                  toggleAside={setIsToggle}
+                />
+                <NavItem
+                  name={"habilidades"}
+                  index={3}
+                  aside
+                  toggleAside={setIsToggle}
+                />
+                <NavItem
+                  name={"Hoja de vida"}
+                  index={4}
+                  aside
+                  toggleAside={setIsToggle}
+                  button={true}
+                />
               </ul>
             </motion.aside>
           )}

@@ -2,7 +2,13 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../animations/motion";
 
-export const NavItem = ({ name, index, button = false, aside = false }) => {
+export const NavItem = ({
+  name,
+  index,
+  button = false,
+  aside = false,
+  toggleAside = () => {},
+}) => {
   return (
     <motion.li
       initial="hidden"
@@ -24,6 +30,7 @@ export const NavItem = ({ name, index, button = false, aside = false }) => {
           </span>
           <a
             href={`#${name}`}
+            onClick={() => toggleAside(false)}
             className={
               aside
                 ? "links capitalize text-lg"

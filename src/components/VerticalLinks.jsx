@@ -23,7 +23,7 @@ export const VerticalLinks = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/jeferson-hernandez-gil-11a54b255/">
+            <a href="https://www.linkedin.com/in/jefer-hernandez/">
               <img
                 src={linkedinIcon}
                 alt="linkedin_logo"
