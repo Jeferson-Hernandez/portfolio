@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -12,22 +12,17 @@ export const NavBar = () => {
   const [visible, setVisible] = useState(true);
   const [isToggle, setIsToggle] = useState(false);
 
-  const getCurrentDimension = () => window.innerWidth;
+  const refAside = useRef(null);
+  const refToggleImg = useRef(null);
 
-  // const handleScreenWidth = () => {
-  //   const screenWidth = window.innerWidth;
-  //   if (screenWidth > 700) {
-  //     setIsToggle(false);
-  //   }
-  //   console.log(screenWidth);
-  // };
+  const getCurrentDimension = () => window.innerWidth;
 
   useEffect(() => {
     const updateDimension = () => {
       setScreenWidth(getCurrentDimension());
     };
 
-    //Scroll to toggle de navbar
+    //Navbar toggle when scrolling down
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
 
@@ -43,13 +38,26 @@ export const NavBar = () => {
       setIsToggle(false);
     }
 
+    //Close sidebar when click outside
+    const handleOutsideClick = (event) => {
+      if (!isToggle) return;
+      if (
+        !refAside.current.contains(event.target) &&
+        !refToggleImg.current.contains(event.target)
+      ) {
+        setIsToggle(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", updateDimension);
     return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, [screenWidth, prevScrollPos]);
+  }, [screenWidth, prevScrollPos, isToggle]);
 
   //Disable scrollY if aside is toggle
   isToggle ? disableBodyScroll(document) : enableBodyScroll(document);
@@ -76,6 +84,7 @@ export const NavBar = () => {
           src={isToggle ? closeIcon : hamburgerIcon}
           alt="close menu icon"
           onClick={() => setIsToggle(!isToggle)}
+          ref={refToggleImg}
           className={
             isToggle
               ? "md:hidden cursor-pointer mr-1 z-50"
@@ -97,6 +106,7 @@ export const NavBar = () => {
               animate={isToggle ? "visible" : "hidden"}
               variants={navFadeIn("right", 0.2)}
               exit={"hidden"}
+              ref={refAside}
               className="absolute text-center h-screen text-darkWhite left-[25%] inset-0  z-20"
             >
               <ul className="flex flex-col h-full bg-darkBlue items-center justify-center space-y-10 text-base">
