@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { easeIn, fadeIn } from "../animations/motion";
 
-import { avatar } from "../assets";
+import { fotoPerfil } from "../assets";
 
 export const AboutPage = () => {
   const age = new Date().getFullYear() - 1999;
@@ -10,7 +10,7 @@ export const AboutPage = () => {
     <motion.section
       whileInView="visible"
       initial="hidden"
-      viewport={{ once: true, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.1 }}
       id="sobre"
       className=""
     >
@@ -42,8 +42,13 @@ export const AboutPage = () => {
             lenguaje muy versátil.
           </motion.p>
         </div>
-        <motion.div variants={easeIn(0.7, 0.3)} className="w-44 h-44">
-          <img src={avatar} alt="avatar" />
+        <motion.div variants={easeIn(0.7, 0.3)} className="relative">
+          <img
+            src={fotoPerfil}
+            alt="avatar"
+            className="filter-photo rounded w-52 h-64 z-10"
+          />
+          <div className="absolute w-full h-full rounded border-2 border-brightBlue inset-0 translate-x-3 translate-y-3 -z-10" />
         </motion.div>
       </div>
     </motion.section>

@@ -157,6 +157,14 @@ nav {
   }
 }
 
+/* .filter-photo {
+  filter: sepia(98%) brightness(50%) hue-rotate(145deg) saturate(900%);
+  transition: ease 0.2s;
+}
+.filter-photo:hover {
+  filter: none;
+} */
+
 /* ScrollBar */
 
 /* width */

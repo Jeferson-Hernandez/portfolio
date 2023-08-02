@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../animations/motion";
 
+import { cv } from "../assets";
+
 export const NavItem = ({
   name,
   index,
@@ -20,7 +22,12 @@ export const NavItem = ({
       }
     >
       {button ? (
-        <a href="#" className={aside ? "btn-aside" : "btn-nav"}>
+        <a
+          href={cv}
+          target="_blank"
+          rel="noreferrer noopener"
+          className={aside ? "btn-aside" : "btn-nav"}
+        >
           {name}
         </a>
       ) : (

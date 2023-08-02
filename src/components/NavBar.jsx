@@ -8,10 +8,25 @@ import { closeIcon, hamburgerIcon } from "../assets";
 
 export const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(0);
   const [visible, setVisible] = useState(true);
   const [isToggle, setIsToggle] = useState(false);
 
+  const getCurrentDimension = () => window.innerWidth;
+
+  // const handleScreenWidth = () => {
+  //   const screenWidth = window.innerWidth;
+  //   if (screenWidth > 700) {
+  //     setIsToggle(false);
+  //   }
+  //   console.log(screenWidth);
+  // };
+
   useEffect(() => {
+    const updateDimension = () => {
+      setScreenWidth(getCurrentDimension());
+    };
+
     //Scroll to toggle de navbar
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -24,11 +39,17 @@ export const NavBar = () => {
       setPrevScrollPos(currentScrollPos);
     };
 
+    if (screenWidth >= 670) {
+      setIsToggle(false);
+    }
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", updateDimension);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
-  }, [isToggle, prevScrollPos]);
+  }, [screenWidth, prevScrollPos]);
 
   //Disable scrollY if aside is toggle
   isToggle ? disableBodyScroll(document) : enableBodyScroll(document);
@@ -50,7 +71,8 @@ export const NavBar = () => {
           </div>
           <span className="absolute bg-lightWhite inset-0 -z-10 rounded" />
         </motion.div>
-        <img
+        <motion.img
+          variants={easeIn(0.5, 0.3)}
           src={isToggle ? closeIcon : hamburgerIcon}
           alt="close menu icon"
           onClick={() => setIsToggle(!isToggle)}
