@@ -14,7 +14,11 @@ export const VerticalLinks = () => {
       >
         <ul className="vertical-line flex flex-col items-center space-y-5">
           <li>
-            <a href="https://github.com/Jeferson-Hernandez">
+            <a
+              href="https://github.com/Jeferson-Hernandez"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <img
                 src={githubRepo}
                 alt="github_logo"
@@ -23,7 +27,11 @@ export const VerticalLinks = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/jefer-hernandez/">
+            <a
+              href="https://www.linkedin.com/in/jefer-hernandez/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <img
                 src={linkedinIcon}
                 alt="linkedin_logo"
@@ -32,7 +40,11 @@ export const VerticalLinks = () => {
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Blakintk">
+            <a
+              href="https://twitter.com/Blakintk"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <img
                 src={twitterIcon}
                 alt="twitter_logo"
