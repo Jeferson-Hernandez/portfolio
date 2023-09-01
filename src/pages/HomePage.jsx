@@ -49,10 +49,9 @@ export const HomePage = () => {
         >
           Soy un desarrollador enfocado actualmente en el entorno de{" "}
           <span className="text-lightWhite">JavaScript,</span> específicamente
-          en <span className="text-lightWhite">React,</span> con muchas
-          expectativas de seguir explorando este lenguaje.
-          <br /> Dispuesto a aprender nuevas herramientas, con muchas ganas de
-          seguir aprendiendo y mejorar.
+          en <span className="text-lightWhite">React </span>para el Front-End y Python para el Back-End, con muchas
+          expectativas y ganas de seguir aprendiendo en estos lenguajes. <br/>
+          Dispuesto a aprender nuevas tecnologías/herramientas.
         </motion.p>
       </motion.div>
     </motion.section>

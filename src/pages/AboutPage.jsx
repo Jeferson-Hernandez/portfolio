@@ -33,13 +33,11 @@ export const AboutPage = () => {
             decantarme por estudiar algo relacionado, soy tecnólogo egresado del
             Sena en ADSI (Análisis y Desarrollo en los sistemas de información)
             el cual se enfoca en el estudio de algunos lenguajes como Python,
-            JavaScript, .Net y Java también en bases de datos relacionales como
+            JavaScript, .Net y Java, también en bases de datos relacionales como
             SqlServer, MySQL, Oracle y algunas metodologías ágiles como Scrum.
             <br /> <br />
             De lo enseñado lo que más llamo mi atención fueron Python y
-            JavaScript, pero al final me decante por este último principalmente
-            React, aunque pienso seguir aprendiendo Python, ya que es un
-            lenguaje muy versátil.
+            JavaScript, en los que ahora baso mi aprendizaje y utilizo para la creacion de Back-End/APIs (Python) y Front-End (React).
           </motion.p>
         </div>
         <motion.div variants={easeIn(0.7, 0.3)} className="relative">
