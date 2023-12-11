@@ -26,8 +26,7 @@ export const AboutPage = () => {
             className="font-lora"
             variants={fadeIn("bottom", 0.7, 0.3, 50)}
           >
-            Hola, mi nombre es Jeferson, tengo {age} años y vivo en Medellín, me
-            gusta el baloncesto, voleibol, los videojuegos y la lectura. <br />
+            Hola, mi nombre es Jeferson, tengo {age} años y vivo en Medellín/Antioquia. <br />
             <br />
             Siempre me ha interesado la tecnología, lo cual me llevo a
             decantarme por estudiar algo relacionado, soy tecnólogo egresado del
@@ -37,7 +36,7 @@ export const AboutPage = () => {
             SqlServer, MySQL, Oracle y algunas metodologías ágiles como Scrum.
             <br /> <br />
             De lo enseñado lo que más llamo mi atención fueron Python y
-            JavaScript, en los que ahora baso mi aprendizaje y utilizo para la creacion de Back-End/APIs (Python) y Front-End (React).
+            JavaScript, en los que ahora baso mi aprendizaje y utilizo para la creacion de Back-End/APIs (Node/Python) y Front-End (React).
           </motion.p>
         </div>
         <motion.div variants={easeIn(0.7, 0.3)} className="relative">

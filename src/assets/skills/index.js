@@ -9,7 +9,7 @@ import logoSass from "./logo-sass.svg";
 import logoTypescript from "./logo-typescript.svg";
 import logoPython from "./logo-python.svg";
 import logoMongodb from "./logo-mongodb.svg";
-import logoDjango from "./logo-django.svg";
+import LogoGraphql from "./logo-graphql.svg";
 
 export {
   logoCss,
@@ -23,5 +23,5 @@ export {
   logoTypescript,
   logoPython,
   logoMongodb,
-  logoDjango,
+  LogoGraphql,
 };

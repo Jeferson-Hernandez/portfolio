@@ -10,7 +10,7 @@ import {
   logoTypescript,
   logoPython,
   logoMongodb,
-  logoDjango,
+  LogoGraphql,
 } from "../assets/skills";
 
 export const skills = [
@@ -39,16 +39,12 @@ export const skills = [
     url: logoPython,
   },
   {
-    name: "django",
-    url: logoDjango,
-  },
-  {
     name: "tailwind",
     url: logoTailwind,
   },
   {
-    name: "sass",
-    url: logoSass,
+    name: "graphql",
+    url: LogoGraphql,
   },
   {
     name: "git",
@@ -61,5 +57,9 @@ export const skills = [
   {
     name: "mongodb",
     url: logoMongodb,
+  }, 
+  {
+    name: "sass",
+    url: logoSass,
   },
 ];

@@ -34,7 +34,7 @@ export const HomePage = () => {
               .typeString("Desarrollador Web")
               .pauseFor(1500)
               .deleteChars(17)
-              .typeString("Front-end Developer.")
+              .typeString("FullStack Developer.")
               .start();
           }}
           options={{
@@ -47,10 +47,10 @@ export const HomePage = () => {
           variants={fadeIn("bottom", 0.7, 2.1, 20)}
           className="font-lora max-w-4xl"
         >
-          Soy un desarrollador enfocado actualmente en el entorno de{" "}
-          <span className="text-lightWhite">JavaScript,</span> específicamente
-          en <span className="text-lightWhite">React </span>para el Front-End y Python para el Back-End, con muchas
-          expectativas y ganas de seguir aprendiendo en estos lenguajes. <br/>
+          Soy un desarrollador enfocado actualmente en
+          <span className="text-lightWhite"> JavaScript/TypeScript,</span> específicamente
+          en <span className="text-lightWhite">React </span>para el Front-End y <span className="text-lightWhite">Python/Node</span> para el Back-End, con muchas
+          expectativas y ganas de ampliar mis conocimientos en dichos lenguajes.<br />
           Dispuesto a aprender nuevas tecnologías/herramientas.
         </motion.p>
       </motion.div>
