@@ -34,7 +34,7 @@ export const HomePage = () => {
               .typeString("Desarrollador Web")
               .pauseFor(1500)
               .deleteChars(17)
-              .typeString("FullStack Developer.")
+              .typeString("Front-End/Back-End Developer")
               .start();
           }}
           options={{
@@ -49,8 +49,8 @@ export const HomePage = () => {
         >
           Soy un desarrollador enfocado actualmente en
           <span className="text-lightWhite"> JavaScript/TypeScript,</span> específicamente
-          en <span className="text-lightWhite">React </span>para el Front-End y <span className="text-lightWhite">Python/Node</span> para el Back-End, con muchas
-          expectativas y ganas de ampliar mis conocimientos en dichos lenguajes.<br />
+          en <span className="text-lightWhite">React/Next </span>para el Front-End y <span className="text-lightWhite">Python/Node</span> para el Back-End.<br />
+          Manejo de bases de datos como <span className="text-lightWhite">Sql Server, MySQL, MongoDB y PostgreSQL</span><br/>
           Dispuesto a aprender nuevas tecnologías/herramientas.
         </motion.p>
       </motion.div>

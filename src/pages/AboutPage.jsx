@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import { easeIn, fadeIn } from "../animations/motion";
-
+import moment from 'moment';
 import { fotoPerfil } from "../assets";
 
 export const AboutPage = () => {
-  const age = new Date().getFullYear() - 1999;
-
+  const birthDate = moment([1999, 6, 5])
+  const age = Math.abs(birthDate.diff(Date.now(), 'years'))
+  
   return (
     <motion.section
       whileInView="visible"
       initial="hidden"
       viewport={{ once: true, amount: 0.1 }}
       id="sobre"
-      className=""
     >
       <motion.h1
         variants={easeIn(0.7, 0.3)}

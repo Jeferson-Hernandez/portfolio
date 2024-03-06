@@ -1,7 +1,15 @@
-import { hoobankImg, spaceTourismImg, sunnysideImg } from "../assets/works";
+import { hoobankImg, spaceTourismImg, sunnysideImg, musicAppImg } from "../assets/works";
 
 export const works = [
-  {
+   {
+    name: "Music App",
+    img: musicAppImg,
+    desc: 'Proyecto sobre una app de musica simple para probar los metodos al reproducir audios, hecha con HowlerJS para el manejo de audios',
+    technologies: ["Nextjs", "TypeScript", "CSS modules", "Zustand", "PostgreSQL"],
+    github_url: "https://github.com/Jeferson-Hernandez/music_app_next",
+    live_url: "https://music-app-next.vercel.app/",
+  },
+ {
     name: "Space Tourism",
     img: spaceTourismImg,
     desc: 'Proyecto realizado a partir de uno de los retos en <a href="https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3" classname="links text-lightWhite whitespace-nowrap" target="_blank" rel="noreferrer noopener">Frontend-Mentor</a> sobre una empresa que realiza viajes a varios planetas en la que se muestran los destinos, los equipos y los tipos de transporte.',
